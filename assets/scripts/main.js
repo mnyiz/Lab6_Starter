@@ -76,27 +76,27 @@ function initFormHandler() {
 	
 	// Steps B4-B9 will occur inside the event listener from step B3
 	// B4. TODO - Create a new FormData object from the <form> element reference above
-	const formData = new FormData(form);
+		const formData = new FormData(form);
 	// B5. TODO - Create an empty object (we'll refer to this object as recipeObject to
 	//            make this easier to read), and then extract the keys and corresponding
 	//            values from the FormData object and insert them into recipeObject
-	const recipeObject = {};
-	for(const [keys, values] of formData.entries()){
-		recipeObject[keys] = values;
-	}
+		const recipeObject = {};
+		for(const [keys, values] of formData.entries()){
+			recipeObject[keys] = values;
+		}
 	// B6. TODO - Create a new <recipe-card> element
-	const recipeCard = document.createElement('recipe-card');
+		const recipeCard = document.createElement('recipe-card');
 	// B7. TODO - Add the recipeObject data to <recipe-card> using element.data
-	recipeCard.data = recipeObject;
+		recipeCard.data = recipeObject;
 	// B8. TODO - Append this new <recipe-card> to <main>
-	document.querySelector('main').appendChild(recipeCard);
+		document.querySelector('main').appendChild(recipeCard);
 	// B9. TODO - Get the recipes array from localStorage, add this new recipe to it, and
 	//            then save the recipes array back to localStorage
-	const curr = JSON.parse(localStorage.getItem('recipes')) || [];
-	curr.push(recipeObject);
-	saveRecipesToStorage(curr);
+		const curr = JSON.parse(localStorage.getItem('recipes')) || [];
+		curr.push(recipeObject);
+		saveRecipesToStorage(curr);
 
-	})
+	});
 	// B10. TODO - Get a reference to the "Clear Local Storage" button
 	const clear = document.querySelector('button.danger');
 	// B11. TODO - Add a click event listener to clear local storage button
@@ -104,8 +104,8 @@ function initFormHandler() {
 
 	// Steps B12 & B13 will occur inside the event listener from step B11
 	// B12. TODO - Clear the local storage
-	localStorage.clear();
+		localStorage.clear();
 	// B13. TODO - Delete the contents of <main>
-	document.querySelector('main').innerHTML = '';
+		document.querySelector('main').innerHTML = '';
 	});
 }
